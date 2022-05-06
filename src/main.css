@@ -1,0 +1,21 @@
+body {
+    font-family: 'Signika Negative', sans-serif;
+}
+
+@media screen and (max-width: 550px) {
+
+    body {
+        font-size: 75%;
+    }
+}
+
+input, textarea, select {
+    font-family:inherit;
+}
+
+.container {
+    padding: 2em;
+
+    background: linear-gradient(0deg, rgba(3,22,139,1) 0%, rgba(21,64,251,1) 50%);
+    max-width: 500px;
+}
