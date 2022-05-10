@@ -1141,7 +1141,6 @@ const FieldA = ()=>{
 };
 _c2 = FieldA;
 const FieldB = ()=>{
-    console.log('!!');
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
@@ -1161,7 +1160,7 @@ const FieldB = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 103,
+                lineNumber: 102,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
@@ -1181,7 +1180,7 @@ const FieldB = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 119,
+                lineNumber: 118,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
@@ -1205,7 +1204,7 @@ const FieldB = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 135,
+                lineNumber: 134,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
@@ -1217,7 +1216,7 @@ const FieldB = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 155,
+                lineNumber: 154,
                 columnNumber: 13
             }, undefined)
         ]
@@ -1227,22 +1226,22 @@ _c3 = FieldB;
 _client.createRoot(document.querySelector('.root')).render(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
     children: [
         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-            children: "4-3-3 formation!"
+            children: "4-3-3"
         }, void 0, false, {
             fileName: "src/main.js",
-            lineNumber: 169,
+            lineNumber: 168,
             columnNumber: 9
         }, undefined),
         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "container",
             children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(FieldB, {}, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 171,
+                lineNumber: 170,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/main.js",
-            lineNumber: 170,
+            lineNumber: 169,
             columnNumber: 9
         }, undefined)
     ]
