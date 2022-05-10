@@ -1,12 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { createRoot } from 'react-dom/client'
 import playerStyles from './player.module.scss'
 import lineStyles from './line.module.scss'
 import 'normalize.css'
 
 const Player = ({
-    data: { position, lastName },
+    data: { position, lastName, prefilledScore },
 }) => {
+
+    const [ score, setScore ] = useState(prefilledScore)
+
+    const updateScore = e => {
+        setScore(e.currentTarget.value)
+    }
+
     return (
         <div
             className={playerStyles.player}
@@ -24,6 +31,8 @@ const Player = ({
                     size={1}
                     onFocus={() => {console.log('focus')} }
                     onBlur={() =>{ console.log('blur') }}
+                    value={score || ''}
+                    onChange={updateScore}
                 />
             </div>
             <div className={playerStyles.name}>{lastName?.toUpperCase()}</div>
@@ -96,7 +105,8 @@ const FieldA = () => {
     )
 }
 
-const FieldB = () => {
+const FieldB = ({ prefilledScores, }) => {
+    console.log('prefilled scores?', prefilledScores)
     return (
         <>
             <Line
@@ -104,14 +114,17 @@ const FieldB = () => {
                     {
                         position: 3,
                         lastName: 'Perišić',
+                        prefilledScore: prefilledScores && prefilledScores[3][0],
                     },
                     {
                         position: 5,
                         lastName: 'Mbappé',
+                        prefilledScore: prefilledScores && prefilledScores[3][1],
                     },
                     {
                         position: 7,
                         lastName: 'Dembélé',
+                        prefilledScore: prefilledScores && prefilledScores[3][2],
                     }
                 ]}
             />
@@ -120,14 +133,17 @@ const FieldB = () => {
                     {
                         position: 3,
                         lastName: 'Machís',
+                        prefilledScore: prefilledScores && prefilledScores[2][0],
                     },
                     {
                         position: 5,
                         lastName: 'Alcântara',
+                        prefilledScore: prefilledScores && prefilledScores[2][1],
                     },
                     {
                         position: 7,
                         lastName: 'Sané',
+                        prefilledScore: prefilledScores && prefilledScores[2][2],
                     }
                 ]}
             />
@@ -136,18 +152,22 @@ const FieldB = () => {
                     {
                         position: 2,
                         lastName: 'Hernández',
+                        prefilledScore: prefilledScores && prefilledScores[1][0],
                     },
                     {
                         position: 4,
                         lastName: 'Djené',
+                        prefilledScore: prefilledScores && prefilledScores[1][1],
                     },
                     {
                         position: 6,
                         lastName: 'Militão',
+                        prefilledScore: prefilledScores && prefilledScores[1][2],
                     },
                     {
                         position: 8,
                         lastName: 'Alexander-Arnold',
+                        prefilledScore: prefilledScores && prefilledScores[1][3],
                     }
                 ]}
             />
@@ -156,6 +176,7 @@ const FieldB = () => {
                     {
                         position: 5,
                         lastName: 'Gulácsi',
+                        prefilledScore: prefilledScores && prefilledScores[0][0],
                     },
                 ]}
             />
@@ -163,11 +184,29 @@ const FieldB = () => {
     )
 }
 
+const getPrefilledScores = str => {
+    return str.split('_')
+        .map(fieldRow => fieldRow.split('-'))
+        .map(fieldRow => {
+            return fieldRow.map(scoreStr => {
+                const score = parseInt(scoreStr)
+                return Number.isNaN(score) ? null : score
+            })
+
+        })
+}
+
+const prefilledScoresParams = new URLSearchParams(location.search).get('scores')
+const prefilledScores = prefilledScoresParams && getPrefilledScores(prefilledScoresParams)
+ 
 createRoot(document.querySelector('.root')).render(
     <>
-        <h2>4-3-3</h2>
+        <h2><a href="/?scores=6_5.5-x-6-8-7_7-8-x_4-9-6.4">4-3-3</a></h2>
+        <a href="/">clear</a>
         <div className="container">
-        <FieldB />
+        <FieldB
+            prefilledScores={prefilledScores}
+        />
         </div>
     </>
 )
