@@ -18,4 +18,13 @@ input, textarea, select {
 
     background: linear-gradient(0deg, rgba(3,22,139,1) 0%, rgba(21,64,251,1) 50%);
     max-width: 500px;
+
+    > div:not(:last-child) {
+        // border: 1px solid white;
+        margin-bottom: 1.5em;
+    }
+}
+
+h1, h2 {
+    margin: 0
 }
