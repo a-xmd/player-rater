@@ -18,6 +18,14 @@ input, textarea, select {
   padding: 2em;
 }
 
+.container > div:not(:last-child) {
+  margin-bottom: 1.5em;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
 .ZTzOpW_player {
   --position: 0;
   grid-column-start: var(--position);
@@ -29,7 +37,7 @@ input, textarea, select {
 
 .ZTzOpW_player .ZTzOpW_rate-box {
   width: 100%;
-  margin-bottom: .5em;
+  margin-bottom: .75em;
   display: flex;
 }
 
@@ -45,7 +53,7 @@ input, textarea, select {
 }
 
 .ZTzOpW_player .ZTzOpW_rate-box input:focus {
-  border-color: #ffc107;
+  border-color: #ffa31a;
 }
 
 .ZTzOpW_player .ZTzOpW_name {
@@ -57,7 +65,6 @@ input, textarea, select {
 .HrjdvG_line {
   --players: 9;
   grid-template-columns: repeat(var(--players), minmax(0, 1fr) );
-  margin-bottom: 1em;
   display: grid;
 }
 
@@ -215,4 +222,4 @@ template, [hidden] {
   display: none;
 }
 
-/*# sourceMappingURL=index.af20ad6e.css.map */
+/*# sourceMappingURL=index.2103b895.css.map */

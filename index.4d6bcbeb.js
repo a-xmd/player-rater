@@ -1015,7 +1015,13 @@ var _playerModuleScssDefault = parcelHelpers.interopDefault(_playerModuleScss);
 var _lineModuleScss = require("./line.module.scss");
 var _lineModuleScssDefault = parcelHelpers.interopDefault(_lineModuleScss);
 var _normalizeCss = require("normalize.css");
-const Player = ({ data: { position , lastName  } ,  })=>{
+var _s = $RefreshSig$();
+const Player = ({ data: { position , lastName , prefilledScore  } ,  })=>{
+    _s();
+    const [score, setScore] = _react.useState(prefilledScore);
+    const updateScore = (e)=>{
+        setScore(e.currentTarget.value);
+    };
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
         className: _playerModuleScssDefault.default.player,
         style: {
@@ -1034,15 +1040,17 @@ const Player = ({ data: { position , lastName  } ,  })=>{
                     },
                     onBlur: ()=>{
                         console.log('blur');
-                    }
+                    },
+                    value: score || '',
+                    onChange: updateScore
                 }, void 0, false, {
                     fileName: "src/main.js",
-                    lineNumber: 20,
+                    lineNumber: 27,
                     columnNumber: 17
                 }, undefined)
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 17,
+                lineNumber: 24,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -1050,16 +1058,17 @@ const Player = ({ data: { position , lastName  } ,  })=>{
                 children: lastName?.toUpperCase()
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 29,
+                lineNumber: 38,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true, {
         fileName: "src/main.js",
-        lineNumber: 11,
+        lineNumber: 18,
         columnNumber: 9
     }, undefined);
 };
+_s(Player, "Ve8F54T8NWzIFpHr9CMe7AGv8zo=");
 _c = Player;
 const Line = ({ players =[] ,  })=>{
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
@@ -1068,13 +1077,13 @@ const Line = ({ players =[] ,  })=>{
                 data: player
             }, index, false, {
                 fileName: "src/main.js",
-                lineNumber: 41,
+                lineNumber: 50,
                 columnNumber: 13
             }, undefined)
         )
     }, void 0, false, {
         fileName: "src/main.js",
-        lineNumber: 39,
+        lineNumber: 48,
         columnNumber: 9
     }, undefined);
 };
@@ -1093,7 +1102,7 @@ const FieldA = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 53,
+                lineNumber: 62,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
@@ -1110,7 +1119,7 @@ const FieldA = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 64,
+                lineNumber: 73,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
@@ -1133,115 +1142,155 @@ const FieldA = ()=>{
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 77,
+                lineNumber: 86,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
 _c2 = FieldA;
-const FieldB = ()=>{
+const FieldB = ({ prefilledScores: prefilledScores1 ,  })=>{
+    console.log('prefilled scores?', prefilledScores1);
     return /*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
         children: [
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
                 players: [
                     {
                         position: 3,
-                        lastName: 'Perišić'
+                        lastName: 'Perišić',
+                        prefilledScore: prefilledScores1 && prefilledScores1[3][0]
                     },
                     {
                         position: 5,
-                        lastName: 'Mbappé'
+                        lastName: 'Mbappé',
+                        prefilledScore: prefilledScores1 && prefilledScores1[3][1]
                     },
                     {
                         position: 7,
-                        lastName: 'Dembélé'
+                        lastName: 'Dembélé',
+                        prefilledScore: prefilledScores1 && prefilledScores1[3][2]
                     }
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 102,
+                lineNumber: 112,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
                 players: [
                     {
                         position: 3,
-                        lastName: 'Machís'
+                        lastName: 'Machís',
+                        prefilledScore: prefilledScores1 && prefilledScores1[2][0]
                     },
                     {
                         position: 5,
-                        lastName: 'Alcântara'
+                        lastName: 'Alcântara',
+                        prefilledScore: prefilledScores1 && prefilledScores1[2][1]
                     },
                     {
                         position: 7,
-                        lastName: 'Sané'
+                        lastName: 'Sané',
+                        prefilledScore: prefilledScores1 && prefilledScores1[2][2]
                     }
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 118,
+                lineNumber: 131,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
                 players: [
                     {
                         position: 2,
-                        lastName: 'Hernández'
+                        lastName: 'Hernández',
+                        prefilledScore: prefilledScores1 && prefilledScores1[1][0]
                     },
                     {
                         position: 4,
-                        lastName: 'Djené'
+                        lastName: 'Djené',
+                        prefilledScore: prefilledScores1 && prefilledScores1[1][1]
                     },
                     {
                         position: 6,
-                        lastName: 'Militão'
+                        lastName: 'Militão',
+                        prefilledScore: prefilledScores1 && prefilledScores1[1][2]
                     },
                     {
                         position: 8,
-                        lastName: 'Alexander-Arnold'
+                        lastName: 'Alexander-Arnold',
+                        prefilledScore: prefilledScores1 && prefilledScores1[1][3]
                     }
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 134,
+                lineNumber: 150,
                 columnNumber: 13
             }, undefined),
             /*#__PURE__*/ _jsxDevRuntime.jsxDEV(Line, {
                 players: [
                     {
                         position: 5,
-                        lastName: 'Gulácsi'
+                        lastName: 'Gulácsi',
+                        prefilledScore: prefilledScores1 && prefilledScores1[0][0]
                     }, 
                 ]
             }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 154,
+                lineNumber: 174,
                 columnNumber: 13
             }, undefined)
         ]
     }, void 0, true);
 };
 _c3 = FieldB;
+const getPrefilledScores = (str)=>{
+    return str.split('_').map((fieldRow)=>fieldRow.split('-')
+    ).map((fieldRow)=>{
+        return fieldRow.map((scoreStr)=>{
+            const score = parseInt(scoreStr);
+            return Number.isNaN(score) ? null : score;
+        });
+    });
+};
+const prefilledScoresParams = new URLSearchParams(location.search).get('scores');
+const prefilledScores = prefilledScoresParams && getPrefilledScores(prefilledScoresParams);
 _client.createRoot(document.querySelector('.root')).render(/*#__PURE__*/ _jsxDevRuntime.jsxDEV(_jsxDevRuntime.Fragment, {
     children: [
         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("h2", {
-            children: "4-3-3"
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
+                href: "/?scores=6_5.5-x-6-8-7_7-8-x_4-9-6.4",
+                children: "4-3-3"
+            }, void 0, false, {
+                fileName: "src/main.js",
+                lineNumber: 204,
+                columnNumber: 13
+            }, undefined)
         }, void 0, false, {
             fileName: "src/main.js",
-            lineNumber: 168,
+            lineNumber: 204,
+            columnNumber: 9
+        }, undefined),
+        /*#__PURE__*/ _jsxDevRuntime.jsxDEV("a", {
+            href: "/",
+            children: "clear"
+        }, void 0, false, {
+            fileName: "src/main.js",
+            lineNumber: 205,
             columnNumber: 9
         }, undefined),
         /*#__PURE__*/ _jsxDevRuntime.jsxDEV("div", {
             className: "container",
-            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(FieldB, {}, void 0, false, {
+            children: /*#__PURE__*/ _jsxDevRuntime.jsxDEV(FieldB, {
+                prefilledScores: prefilledScores
+            }, void 0, false, {
                 fileName: "src/main.js",
-                lineNumber: 170,
+                lineNumber: 207,
                 columnNumber: 9
             }, undefined)
         }, void 0, false, {
             fileName: "src/main.js",
-            lineNumber: 169,
+            lineNumber: 206,
             columnNumber: 9
         }, undefined)
     ]
@@ -25324,9 +25373,9 @@ module.exports = require('./cjs/scheduler.development.js');
 })();
 
 },{}],"l7B9E":[function(require,module,exports) {
-module.exports["name"] = `ZTzOpW_name`;
 module.exports["player"] = `ZTzOpW_player`;
 module.exports["rate-box"] = `ZTzOpW_rate-box`;
+module.exports["name"] = `ZTzOpW_name`;
 
 },{}],"fMjgS":[function(require,module,exports) {
 module.exports["line"] = `HrjdvG_line`;
